@@ -24,5 +24,5 @@ public class HelloWorld extends OpMode {
     /*
     1. Hello: World, change the telementary date to display "Hello: Your name"
     2. Run this code in the Autonomous section of your DS
-
+    /*
 }
