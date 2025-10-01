@@ -23,7 +23,7 @@ public class VariablePractice extends OpMode {
     @Override
     public void loop() {
         /*
-        1. change the String  variable "name" to you team name.
+        1. change the String  vavriable "name" to you team name.
         2. create an int called "motorAngle" and store an angle between 0-180. display in this in your init
         method.
          */
