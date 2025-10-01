@@ -18,6 +18,9 @@ public class IfPractice extends OpMode {
         if (aButton) {
             telemetry.addData("A Button", "Pressed!");
         }
+            else { // otherwise
+                telemetry.addData("A Button", "NOT Pressed");
+        }
             telemetry.addData("A Button State", aButton);
 }
 

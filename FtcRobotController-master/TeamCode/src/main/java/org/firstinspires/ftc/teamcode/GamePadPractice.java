@@ -11,7 +11,6 @@ public class GamePadPractice extends OpMode  {
     public void init() {
 
     }
-
     @Override
     public void loop() {
         // runs 50x* a second
