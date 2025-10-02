@@ -13,15 +13,26 @@ public class IfPractice extends OpMode {
 
     @Override
     public void loop() {
-        double leftY = gamepad1.left_stick_y;
+        double motorSpeed = gamepad1.left_stick_y;
 
-        if (leftY < 0) {
-            telemetry.addData("Left Stick", "is Negative");
-        }
-        else {
-            telemetry.addData("Left Stick", "is Positive!");
+        if (!gamepad1.a) {
+            motorSpeed *= 0.5;
         }
 
+        telemetry.addData("Left Stick value", motorSpeed);
 }
 
 }
+
+/*
+1. make a turbo button. If the button is NOT pressed, multiple the motor speed by 0.5, otherwise,
+use standard speed
+ */
+
+/*
+
+AND - && if (leftY < 0.5 && leftY > 0) {
+OR  || if (leftY < 0 || rightY < 0) {
+NOT ! if (clawClosed) {
+
+ */
