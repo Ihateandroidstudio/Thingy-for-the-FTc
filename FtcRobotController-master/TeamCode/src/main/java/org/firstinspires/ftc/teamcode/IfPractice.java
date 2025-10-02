@@ -21,7 +21,7 @@ public class IfPractice extends OpMode {
         else {
             telemetry.addData("Left Stick", "is Positive!");
         }
-        telemetry.addData("Left Stick value", leftY);
+
 }
 
 }
