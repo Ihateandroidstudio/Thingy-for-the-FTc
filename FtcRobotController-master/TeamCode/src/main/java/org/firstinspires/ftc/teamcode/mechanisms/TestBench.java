@@ -6,10 +6,10 @@ import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class TestBench {
-    private DigitalChannel TouchSensor;
+    private DigitalChannel TouchSensor; // touchSenserIntake
 
     public void init(HardwareMap hwMap) {
-        TouchSensor = hwMap.get(DigitalChannel.class,"touchsensor");
+        TouchSensor = hwMap.get(DigitalChannel.class,"touch_sensor");
         TouchSensor.setMode(DigitalChannel.Mode.INPUT);
 
 
