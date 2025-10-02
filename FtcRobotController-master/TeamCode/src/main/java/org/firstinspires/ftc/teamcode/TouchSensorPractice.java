@@ -27,4 +27,4 @@ public class TouchSensorPractice extends OpMode {
     if the touch sensor is NOT pressed.
     2.in your telemetry opmode, have telemetry state "pressed!" and "notpressed! " instead of true or false
      */
-}
+}//sgoihefaio;jrsgojifjiofa
