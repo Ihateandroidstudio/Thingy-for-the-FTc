@@ -13,15 +13,15 @@ public class IfPractice extends OpMode {
 
     @Override
     public void loop() {
-        double lefty = gamepad1.left_stick_y;
+        double leftY = gamepad1.left_stick_y;
 
-        if (lefty < 0) {
+        if (leftY < 0) {
             telemetry.addData("Left Stick", "is Negative");
         }
         else {
             telemetry.addData("Left Stick", "is Positive!");
         }
-        telemetry.addData("Left Stick value", lefty);
+        telemetry.addData("Left Stick value", leftY);
 }
 
 }
