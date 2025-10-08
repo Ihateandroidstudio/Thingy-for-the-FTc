@@ -12,7 +12,6 @@ public class TestBench {
         TouchSensor = hwMap.get(DigitalChannel.class,"touch_sensor");
         TouchSensor.setMode(DigitalChannel.Mode.INPUT);
 
-
     }
 
     public boolean IsTouchSensorPressed() {

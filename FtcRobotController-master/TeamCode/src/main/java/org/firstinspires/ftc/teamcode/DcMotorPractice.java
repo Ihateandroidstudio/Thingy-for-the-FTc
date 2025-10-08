@@ -17,5 +17,6 @@ public class DcMotorPractice extends OpMode {
     @Override
     public void loop() {
         bench.setMotorSpeed(1);
+        telemetry.addData("Motor Revs", bench.getMotorRevs());
     }
 }
