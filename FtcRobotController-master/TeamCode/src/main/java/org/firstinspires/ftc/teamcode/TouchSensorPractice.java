@@ -16,7 +16,7 @@ public class TouchSensorPractice extends OpMode {
     @Override
     public void loop() {
         String touchSensorstate = "not pressed";
-                if (bench.IsTouchSensorPressed()) {
+                if (bench.isTouchSensorPressed()) {
                     touchSensorstate = "pressed";
                 }
         telemetry.addData("touch sensor state", touchSensorstate);

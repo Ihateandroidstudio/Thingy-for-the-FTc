@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class TestBench1 {
+    public boolean isTouchSensorPressed;
     private DcMotor motor; // LinearSlideMotor0
     private double ticksPerRev; // revolution
 
@@ -24,5 +25,5 @@ public class TestBench1 {
     public double getMotorRevs() {
         return motor.getCurrentPosition() / ticksPerRev; // normalizing ticks to revolution 2:1
     }
-
 }
+
