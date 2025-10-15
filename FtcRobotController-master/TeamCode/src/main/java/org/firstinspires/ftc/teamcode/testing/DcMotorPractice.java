@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.testing;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -13,6 +13,7 @@ public class DcMotorPractice extends OpMode {
     @Override
     public void init() {
         bench.init(hardwareMap);
+
     }
 
     @Override
@@ -20,7 +21,6 @@ public class DcMotorPractice extends OpMode {
         double motorSpeed = gamepad1.left_stick_y;
 
         bench.setMotorSpeed(motorSpeed);
-
 
         if (gamepad1.a) {
             bench.setMotorZeroBehaviour(DcMotor.ZeroPowerBehavior.BRAKE);

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.testing;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -8,8 +8,6 @@ import org.firstinspires.ftc.teamcode.mechanisms.TestBenchServo;
 public class ServoExamples extends OpMode {
     TestBenchServo bench = new TestBenchServo();
     double leftTrigger, rightTrigger;
-
-
 
 
     @Override
@@ -31,14 +29,17 @@ public class ServoExamples extends OpMode {
         }
         else {
             bench.setServoPos(1.0);
+        }
 
         if (gamepad1.b) {
             bench.setServoRot(1.0);
         }
         else {
             bench.setServoRot(0);
-            }
-
         }
+
+        telemetry.addData("A", gamepad1.a);
+        telemetry.update();
+
     }
 }
