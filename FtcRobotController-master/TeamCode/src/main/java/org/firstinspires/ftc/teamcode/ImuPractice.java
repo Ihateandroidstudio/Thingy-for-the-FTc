@@ -39,5 +39,5 @@ public class ImuPractice extends OpMode {
 /*
 1. return the heading in radians
 2. When your head is <0.5 && greater that -0.5, stop a motor. If its less than -0.5 make your
-motor positive, and if its greater than .5, make your motor negative.
+motor positive, and if its greater than .5, make your motor negative. abc
  */
