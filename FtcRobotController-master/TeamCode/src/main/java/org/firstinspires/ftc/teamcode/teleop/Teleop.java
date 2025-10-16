@@ -15,7 +15,7 @@ public class Teleop extends CommandOpMode {
     private Trigger left_trigger,right_trigger;
 
     @Override
-    public void initialize(){
+    public void initialize() {
 
         drive_controller = new GamepadEx(gamepad1);
 
