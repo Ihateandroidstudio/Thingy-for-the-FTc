@@ -14,9 +14,12 @@ public class DriveSubsystem extends SubsystemBase {
     private Motor backleft;
 
     private String frontleftmotor = "frontleft";
-    private String frontrightmotor = "frontleft";
+    private String frontrightmotor = "frontright";
     private String backrightmotor = "backright";
     private String backleftmotor = "backleft";
+
+    private MecanumDrive drive;
+
 
 
     public DriveSubsystem (HardwareMap hardwareMap){
@@ -30,6 +33,10 @@ public class DriveSubsystem extends SubsystemBase {
         backleft.setZeroPowerBehavior(Motor.ZeroPowerBehavior.BRAKE);
         backright.setZeroPowerBehavior(Motor.ZeroPowerBehavior.BRAKE);
 
+        frontright.setInverted(true);
+        backright.setInverted(true);
+
+
         frontleft.resetEncoder();
         frontright.resetEncoder();
         backleft.resetEncoder();
@@ -41,4 +48,5 @@ public class DriveSubsystem extends SubsystemBase {
 
         drive.driveRobotCentric(strafe, forward, rotate);
     }
+
 }

@@ -11,7 +11,6 @@ import org.firstinspires.ftc.teamcode.subsystems.DriveSubsystem;
 public class Teleop extends CommandOpMode {
     private DriveSubsystem drive_subsystem;
     private GamepadEx drive_controller;
-
     private Trigger left_trigger,right_trigger;
 
     @Override
