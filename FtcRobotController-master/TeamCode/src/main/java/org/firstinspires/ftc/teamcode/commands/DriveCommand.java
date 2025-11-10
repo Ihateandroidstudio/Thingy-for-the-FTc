@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.commands;
 // Import the necessary classes from FTCLib and our project
 import com.arcrobotics.ftclib.command.CommandBase;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
+import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 
 import org.firstinspires.ftc.teamcode.subsystems.DriveSubsystem;
 
@@ -21,9 +22,8 @@ public class DriveCommand extends CommandBase {
 
     /**
      * Constructor - This runs once when the command is created
-     *
      * @param driveSubsystem The robot's drive system
-     * @param gamepadEx      The gamepad controller
+     * @param gamepadEx The gamepad controller
      */
     public DriveCommand(DriveSubsystem driveSubsystem, GamepadEx gamepadEx) {
         // Save the subsystem and gamepad so we can use them later
@@ -46,7 +46,6 @@ public class DriveCommand extends CommandBase {
         double strafe = gamepadEx.getLeftX();    // Left stick X-axis: left/right (strafing)
         double rotate = gamepadEx.getRightX();   // Right stick X-axis: rotation (turning)
 
-        // Send these movement values to the drive subsystem to actually move the robot
         driveSubsystem.drive(forward, strafe, rotate);
     }
 
