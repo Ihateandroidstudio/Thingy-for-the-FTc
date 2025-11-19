@@ -4,8 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@TeleOp(name = "Two Wheel Outake")
-public class TwoWheelOutake extends LinearOpMode {
+@TeleOp(name = "Two Wheel Outtake")
+public class TwoWheelOuttake extends LinearOpMode {
 
     private DcMotor outtakeLeft;
     private DcMotor outtakeRight;
