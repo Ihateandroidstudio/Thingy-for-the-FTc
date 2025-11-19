@@ -1,63 +1,50 @@
 package org.firstinspires.ftc.teamcode.commands;
 
-// Import the necessary classes from FTCLib and our project
 import com.arcrobotics.ftclib.command.CommandBase;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 
 import org.firstinspires.ftc.teamcode.subsystems.DriveSubsystem;
 
-/**
- * DriveCommand - This is a command that controls the robot's driving
- * <p>
- * In FTCLib's command-based programming:
- * - Commands contain the logic for what the robot should DO
- * - Subsystems contain the hardware and HOW to do it
- * - This command tells the drive subsystem to move based on gamepad input
- */
+// This command reads the gamepad and tells the robot how to move
+// It runs continuously during teleop to keep checking for input
 public class DriveCommand extends CommandBase {
-    // Store references to the subsystem and gamepad we need
-    private final DriveSubsystem driveSubsystem;  // The drive system we're controlling
-    private final GamepadEx gamepadEx;            // The gamepad we're reading input from
+    // Store the drive system and gamepad so we can use them
+    private final DriveSubsystem driveSubsystem;
+    private final GamepadEx gamepadEx;
 
-    /**
-     * Constructor - This runs once when the command is created
-     * @param driveSubsystem The robot's drive system
-     * @param gamepadEx The gamepad controller
-     */
+    // Constructor: set up the command with the drive system and gamepad
     public DriveCommand(DriveSubsystem driveSubsystem, GamepadEx gamepadEx) {
-        // Save the subsystem and gamepad so we can use them later
+        // Save these so we can use them later
         this.driveSubsystem = driveSubsystem;
         this.gamepadEx = gamepadEx;
 
-        // Tell the command scheduler that this command "requires" the drive subsystem
-        // This prevents other commands from using the drive system at the same time
+        // Tell the scheduler this command needs the drive system
+        // (prevents other commands from interfering)
         addRequirements(driveSubsystem);
     }
 
-    /**
-     * execute() - This method runs repeatedly (about 50 times per second) while the command is active
-     * This is where we read the gamepad and tell the robot how to move
-     */
+    // This method runs over and over (about 50 times per second)
+    // It reads the gamepad and moves the robot
     @Override
     public void execute() {
-        // Read the gamepad joystick values (each value is between -1.0 and 1.0)
-        double forward = -gamepadEx.getLeftY();  // Left stick Y-axis: forward/backward (negative because Y is inverted)
-        double strafe = gamepadEx.getLeftX();    // Left stick X-axis: left/right (strafing)
-        double rotate = gamepadEx.getRightX();   // Right stick X-axis: rotation (turning)
+        // Read the gamepad sticks (values go from -1.0 to 1.0)
+        double forward = -gamepadEx.getLeftY();  // Left stick up/down (negative because Y is backwards)
+        double strafe = gamepadEx.getLeftX();    // Left stick left/right
+        double rotate = gamepadEx.getRightX();   // Right stick left/right
 
+        // Ignore very small movements (prevents accidental drift)
+        if (Math.abs(forward) < 0.05) forward = 0;
+        if (Math.abs(strafe) < 0.05) strafe = 0;
+        if (Math.abs(rotate) < 0.05) rotate = 0;
+
+        // Tell the drive system to move the robot
         driveSubsystem.drive(forward, strafe, rotate);
     }
 
-    /**
-     * isFinished() - This tells the command scheduler when this command should stop
-     *
-     * @return true if the command should end, false if it should keep running
-     */
     @Override
     public boolean isFinished() {
-        // Return false because we want this command to run continuously during teleop
-        // The robot should always be listening for gamepad input!
+        // Never finish - we always want to be reading the gamepad!
         return false;
     }
 }

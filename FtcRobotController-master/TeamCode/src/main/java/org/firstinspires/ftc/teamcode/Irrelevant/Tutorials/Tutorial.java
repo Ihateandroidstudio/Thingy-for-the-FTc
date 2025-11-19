@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Tutorials;
+package org.firstinspires.ftc.teamcode.Irrelevant.Tutorials;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -72,7 +72,7 @@ public class Tutorial extends OpMode {
             //in this case, it will print on the telemetry "Gamepad1:is not being pressed"
             //because the "A" button can only be off or on there is no need for another if statement to check if its not being pressed
             //unless you want to check multiple buttons which is usually what happens in most practical OpModes/Programs
-            //but that is for another tutorial called IfElse, short read
+            //but that is for another tutorial called IfElse
         }
     }
 

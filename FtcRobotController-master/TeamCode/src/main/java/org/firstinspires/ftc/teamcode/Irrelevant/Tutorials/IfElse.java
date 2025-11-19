@@ -1,8 +1,7 @@
-package org.firstinspires.ftc.teamcode.Tutorials;
+package org.firstinspires.ftc.teamcode.Irrelevant.Tutorials;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-
 @TeleOp(name = "More buttons being used")
 public class IfElse extends OpMode {
 
