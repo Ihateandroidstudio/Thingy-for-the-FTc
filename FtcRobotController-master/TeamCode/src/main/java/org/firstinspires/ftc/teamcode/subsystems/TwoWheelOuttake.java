@@ -18,7 +18,7 @@ public class TwoWheelOuttake extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
 
         outtakeLeft = hardwareMap.get(DcMotor.class, "outtakeLeft");
-        outtakeRight = hardwareMap.get(DcMotor.class, "outtakeRight");
+        outtakeRight = hardwareMap.get(DcMotor.class,  "outtakeRight");
 
         // most of the time one wheel is mirrored, so reverse one motor
         outtakeRight.setDirection(DcMotor.Direction.REVERSE);
