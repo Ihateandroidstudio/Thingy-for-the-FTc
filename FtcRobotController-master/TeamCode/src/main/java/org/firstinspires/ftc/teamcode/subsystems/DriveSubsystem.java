@@ -36,7 +36,6 @@ public class DriveSubsystem extends SubsystemBase {
         frontright.setInverted(true);
         backright.setInverted(true);
 
-
         frontleft.resetEncoder();
         frontright.resetEncoder();
         backleft.resetEncoder();
@@ -46,7 +45,7 @@ public class DriveSubsystem extends SubsystemBase {
     }
     public void drive(double forward, double strafe, double rotate){
 
-        drive.driveRobotCentric(strafe, forward, rotate);
+        drive.driveRobotCentric(forward, strafe, rotate);
     }
 
 }
